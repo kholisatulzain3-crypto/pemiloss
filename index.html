@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Voting Ketua OSIS SMK Negeri 1 Ampelgading</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .kandidat {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: #fafafa;
+            width: 30%;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        button {
+            margin-top: 10px;
+            background: #28a745;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .hasil {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f5e9;
+            border-left: 5px solid #28a745;
+            display: none;
+        }
+    </style>
+</head>
+<body>
 
+<header>
+    <h1>E-Voting Pemilihan Ketua OSIS</h1>
+    <h2>SMK Negeri 1 Ampelgading</h2>
+</header>
+
+<div class="container">
+    <h3>Pilih Kandidat Ketua OSIS:</h3>
+
+    <div class="kandidat">
+        <div class="card">
+            <img src="https://via.placeholder.com/200" alt="Kandidat 1">
+            <h3>Kandidat 1: Ahmad Pratama</h3>
+            <p>Visi: Membangun OSIS yang aktif, kreatif, dan berprestasi.</p>
+            <button onclick="vote('Ahmad Pratama')">Pilih</button>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/200" alt="Kandidat 2">
+            <h3>Kandidat 2: Bunga Salsabila</h3>
+            <p>Visi: Menjadikan sekolah lebih disiplin dan berkarakter.</p>
+            <button onclick="vote('Bunga Salsabila')">Pilih</button>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/200" alt="Kandidat 3">
+            <h3>Kandidat 3: Dimas Putra</h3>
+            <p>Visi: Mengembangkan kegiatan ekstrakurikuler yang inovatif.</p>
+            <button onclick="vote('Dimas Putra')">Pilih</button>
+        </div>
+    </div>
+
+    <div class="hasil" id="hasilVote">
+        <h3>Terima kasih sudah melakukan voting!</h3>
+        <p id="pilihan"></p>
+    </div>
+</div>
+
+<script>
+    function vote(nama) {
+        document.getElementById('hasilVote').style.display = 'block';
+        document.getElementById('pilihan').innerText = "Anda memilih: " + nama;
+    }
+</script>
+
+</body>
+</html>
